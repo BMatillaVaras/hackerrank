@@ -31,6 +31,14 @@ function readLine() {
 
 function diagonalDifference(arr) {
   // Write your code here
+  let ppalDiagonal = 0;
+  let secDiagonal = 0;
+  for (let i = 0; i < arr.length; i++) {
+    ppalDiagonal += arr[i][i];
+    secDiagonal += arr[i][arr.length - i - 1];
+  }
+  let absolutDifference = Math.abs(ppalDiagonal - secDiagonal);
+  return absolutDifference;
 }
 
 function main() {
