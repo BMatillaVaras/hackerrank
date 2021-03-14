@@ -25,7 +25,7 @@ class Calculator {
   }
   power(n, p) {
     if (n >= 0 && p >= 0) {
-      return Math.pow(n, p);
+      return Math.pow(n, p); // otra forma de hacer la potencia es poner n**p
     } else {
       const err = "n and p should be non-negative";
       return err;
