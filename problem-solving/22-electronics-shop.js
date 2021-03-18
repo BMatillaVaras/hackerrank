@@ -28,19 +28,35 @@ function readLine() {
 /*
  * Complete the getMoneySpent function below.
  */
+// function getMoneySpent(keyboards, drives, b) {
+//   /*
+//    * Write your code here.
+//    */
+//   let posibilities = [];
+//   for (let i = 0; i < keyboards.length; i++) {
+//     for (let j = 0; j < drives.length; j++) {
+//       if (keyboards[i] + drives[j] <= b) {
+//         posibilities.push(keyboards[i] + drives[j]);
+//       }
+//     }
+//   }
+//   return !posibilities.length ? -1 : Math.max(...posibilities);
+// }
+
 function getMoneySpent(keyboards, drives, b) {
   /*
    * Write your code here.
    */
-  let posibilities = [];
+  let mostExpensive = 0;
   for (let i = 0; i < keyboards.length; i++) {
     for (let j = 0; j < drives.length; j++) {
-      if (keyboards[i] + drives[j] <= b) {
-        posibilities.push(keyboards[i] + drives[j]);
+      let sumOptions = keyboards[i] + drives[j];
+      if (sumOptions <= b && mostExpensive < sumOptions) {
+        mostExpensive = sumOptions;
       }
     }
   }
-  return !posibilities.length ? -1 : Math.max(...posibilities);
+  return mostExpensive === 0 ? -1 : mostExpensive;
 }
 
 function main() {
